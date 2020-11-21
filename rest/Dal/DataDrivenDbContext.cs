@@ -247,7 +247,7 @@ namespace BME.DataDriven.REST.Dal
 
                 entity.Property(e => e.Name).HasMaxLength(50);
 
-                entity.Property(e => e.Vatid).HasColumnName("VATID");
+                entity.Property(e => e.VatId).HasColumnName("VATID");
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
@@ -255,7 +255,7 @@ namespace BME.DataDriven.REST.Dal
 
                 entity.HasOne(d => d.VAT)
                     .WithMany(p => p.Product)
-                    .HasForeignKey(d => d.Vatid);
+                    .HasForeignKey(d => d.VatId);
             });
 
             modelBuilder.Entity<Status>(entity =>
